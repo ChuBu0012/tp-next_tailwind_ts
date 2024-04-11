@@ -1,7 +1,12 @@
-export default function Home() {
-  return (
-    <main>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-    </main>
-  );
-}
+'use client'
+import React from "react";
+import { useAppSelector } from "@/lib/hooks";
+
+const Page = () => {
+  // Assuming 'state.counter.value' is the correct path to your Redux state
+  const count = useAppSelector((state) => state.counter.value);
+
+  return <div>{count}</div>;
+};
+
+export default Page;
